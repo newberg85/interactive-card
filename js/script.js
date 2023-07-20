@@ -2,6 +2,9 @@ function showNumber() {
     var numberdc = document.getElementById("number").value;
     var valor = numberdc.replace(/\s+/g, ''); // Removendo espaços em branco
 
+    var numerosSeparados = valor.match(/.{1,4}/g).join(" ");
+    document.getElementById("number").value = numerosSeparados;
+
     document.getElementById("exibirNumero").textContent = numberdc;
 
     if (!/^\d*$/.test(valor)) { // Agora permitindo espaços em branco na entrada
@@ -12,10 +15,6 @@ function showNumber() {
         document.getElementById("mensagemErro").textContent = "";
         document.getElementById("number").classList.remove("error-border");
     }
-
-
-    var numerosSeparados = valor.match(/.{1,4}/g).join(" ");
-    document.getElementById("number").value = numerosSeparados;
 }
 
 function showName() {
@@ -41,9 +40,9 @@ function showCvc() {
 
 
 //Limita a quantidade de Digitos do input
-function onlyNumbers(e) {
-    var charCode = e.charCode ? e.charCode : e.keyCode;
-    if (charCode == 8 || charCode == 9) {
+function onlyNumbers(event) {
+    var charCode = event ? event.charCode || event.keyCode : null;
+    if (charCode === 8 || charCode === 9) {
         return true;
     }
     if (charCode < 48 || charCode > 57) {
@@ -51,30 +50,30 @@ function onlyNumbers(e) {
     }
 }
 
-function limitDigitsCard() {
+function limitDigitsCard(event) {
     var max = 18;
     var card = document.getElementById('number');
     card.value = card.value.slice(0, max);
-    onlyNumbers();
+    onlyNumbers(event); // Passa o evento como parâmetro
 }
 
-function limitDigitsDay() {
+function limitDigitsDay(event) {
     var max = 1;
     var day = document.getElementById('day');
     day.value = day.value.slice(0, max);
-    onlyNumbers();
+    onlyNumbers(event); // Passa o evento como parâmetro
 }
 
-function limitDigitsMonth() {
+function limitDigitsMonth(event) {
     var max = 1;
     var month = document.getElementById('month');
     month.value = month.value.slice(0, max);
-    onlyNumbers();
+    onlyNumbers(event); // Passa o evento como parâmetro
 }
 
-function limitDigitsCvc() {
+function limitDigitsCvc(event) {
     var max = 2;
-    var month = document.getElementById('cvc');
-    month.value = month.value.slice(0, max);
-    onlyNumbers();
+    var cvc = document.getElementById('cvc');
+    cvc.value = cvc.value.slice(0, max);
+    onlyNumbers(event); // Passa o evento como parâmetro
 }
