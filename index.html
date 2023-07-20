@@ -1,51 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Display the site properly based on the user's device -->
+  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <title>Mentor de front-end | Formulário de detalhes do cartão interativo</title>
+  <!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body>
+  <main>
+    <div class="side-img">
+      <img src="images/bg-main-desktop.png" alt="">
+    </div>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+    <div class="cards">
+      <div class="card-1 card" style="background-image: url('images/bg-card-front.png');">
+        <img src="images/card-logo.svg" alt="">
+        <div class="data">
+          <p id="exibirNumero">0000 0000 0000 0000</p>
+          <div class="card-data">
+            <span id="showName">Jane Appleseed</span>
+            <div>
+              <span id="showDay">00</span><span>/</span><span id="showMonth">00</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  000
+      <div class="card-2 card" style="background-image: url('images/bg-card-back.png');">
+        <div class="data">
+          <div class="card-data">
+            <span id="showCvc">000</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  Cardholder Name
-  e.g. Jane Appleseed
+    <form action="">
+      <div class="form-input">
+        <label for="name">Cardholder Name</label>
+        <input type="text" placeholder=" e.g. Jane Appleseed" name="name" id="nome" oninput="showName()" required>
+        <!-- You were missing the ID "nome" in the input field -->
+      </div>
+      <div class="form-input">
+        <label for="number">Card Number</label>
+        <input type="text" name="number" id="number" onkeypress="return limitDigitsCard(event)"
+          placeholder="e.g. 1234 5678 9123 0000" oninput="showNumber()" required>
+        <p id="mensagemErro" style="color: hsl(0, 100%, 66%); font-size:10px;"></p>
+        <!-- You had a typo in the input name attribute (name="name" instead of name="number") -->
+      </div>
 
-  Card Number
-  e.g. 1234 5678 9123 0000
+      <div class="date-picker">
+        <div class="form-group" style="width: 20%;">
+          <label for="#day">Day</label>
+          <input id="day" type="number" min="1" max="31" onkeypress="return limitDigitsDay(event)" placeholder="dd"
+            maxlength="2" oninput="showDay()" required>
+          <!-- Corrected the typo in the ID attribute (for="#day" instead of for="#dia") -->
+        </div>
+        <div class="form-group" style="width: 20%;">
+          <label for="#month">Month</label>
+          <input id="month" type="number" min="1" max="12" onkeypress="return limitDigitsMonth(event)" placeholder="mm"
+            maxlength="2" oninput="showMonth()" required>
+          <!-- Corrected the typo in the ID attribute (for="#month" instead of for="#mes") -->
+        </div>
+        <div class="form-group" style="width: 60%;">
+          <label for="#cvc">Cvc</label>
+          <input id="cvc" type="number" onkeypress="return limitDigitsCvc(event)" placeholder="e.g. 123" maxlength="4"
+            oninput="showCvc()" required>
+          <!-- Corrected the typo in the ID attribute (for="#year" instead of for="#ano") -->
+        </div>
+      </div>
+      <button class="enviar">Enviar</button>
+    </form>
 
-  Exp. Date (MM/YY)
-  MM
-  YY
 
-  CVC
-  e.g. 123
+  </main>
 
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="attribution" style="position: absolute; bottom: 10px; left: 50%;">
+    Desafio por <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Codificado por <a href="#">Wandemberg</a>.
   </div>
+
+  <!-- JS -->
+  <script src="js/script.js"></script>
 </body>
+
 </html>
