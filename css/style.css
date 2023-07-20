@@ -18,6 +18,10 @@ main {
     height: 100%;
 }
 
+.mobile-img {
+    display: none;
+}
+
 .side-img {
     width: 30%;
     height: 99,9%;
@@ -177,3 +181,7 @@ button {
     color: hsl(0, 100%, 66%);
 }
 
+.attribution {
+    position: absolute; 
+    bottom: 10px; left: 50%;
+}
