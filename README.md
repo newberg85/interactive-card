@@ -29,11 +29,14 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
+<img src="images/desktop-version.png" width="150px">
+<img src="images/mobile-version.png" width="150px">
+
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution](https://github.com/newberg85/interactive-card)
+- Live Site URL: [site](https://interactive-card-amber.vercel.app/)
 
 ## My process
 

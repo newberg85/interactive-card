@@ -120,6 +120,7 @@ label {
     text-transform: uppercase;
     font-size: .8rem;
     font-weight: 600;
+    color: hsl(278, 68%, 11%);
 }
 
 .erro {
