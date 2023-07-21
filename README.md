@@ -30,7 +30,7 @@ Users should be able to:
 ![](./screenshot.jpg)
 
 <div style="display:flex; width:100%">
-<img src="images/desktop-version.png" width="240px">
+<img src="images/desktop-version.png" width="100%">
 <img src="images/mobile-version.png" width="40%">
 </div>
 
