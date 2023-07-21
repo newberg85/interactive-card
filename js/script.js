@@ -1,13 +1,13 @@
 function showNumber() {
     var numberdc = document.getElementById("number").value;
-    var valor = numberdc.replace(/\s+/g, ''); // Removendo espaços em branco
+    var valor = numberdc.replace(/\s+/g, ''); 
 
     var numerosSeparados = valor.match(/.{1,4}/g).join(" ");
     document.getElementById("number").value = numerosSeparados;
 
     document.getElementById("exibirNumero").textContent = numberdc;
 
-    if (!/^\d*$/.test(valor)) { // Agora permitindo espaços em branco na entrada
+    if (!/^\d*$/.test(valor)) { 
         document.getElementById("mensagemErro").textContent = "Wrong format, numbers only.";
         document.getElementById("number").value = ""; // Limpa o input em caso de entrada inválida
         document.getElementById("number").classList.add("error-border");
@@ -39,7 +39,7 @@ function showCvc() {
 }
 
 
-//Limita a quantidade de Digitos do input
+//Limita a quantidade de Digitos do input e permiite apenas número
 function onlyNumbers(event) {
     var charCode = event ? event.charCode || event.keyCode : null;
     if (charCode === 8 || charCode === 9) {
@@ -61,19 +61,19 @@ function limitDigitsDay(event) {
     var max = 1;
     var day = document.getElementById('day');
     day.value = day.value.slice(0, max);
-    onlyNumbers(event); // Passa o evento como parâmetro
+    onlyNumbers(event); 
 }
 
 function limitDigitsMonth(event) {
     var max = 1;
     var month = document.getElementById('month');
     month.value = month.value.slice(0, max);
-    onlyNumbers(event); // Passa o evento como parâmetro
+    onlyNumbers(event); 
 }
 
 function limitDigitsCvc(event) {
     var max = 2;
     var cvc = document.getElementById('cvc');
     cvc.value = cvc.value.slice(0, max);
-    onlyNumbers(event); // Passa o evento como parâmetro
+    onlyNumbers(event); 
 }

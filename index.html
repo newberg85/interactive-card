@@ -25,7 +25,7 @@
 
 <body translate="no">
   <main>
-    <div class="mobile-img" >
+    <div class="mobile-img">
       <img src="images/bg-main-mobile.png" alt="">
     </div>
 
@@ -60,14 +60,12 @@
       <div class="form-input">
         <label for="name">Cardholder Name</label>
         <input type="text" placeholder=" e.g. Jane Appleseed" name="name" id="nome" oninput="showName()" required>
-        <!-- You were missing the ID "nome" in the input field -->
       </div>
       <div class="form-input">
         <label for="number">Card Number</label>
         <input type="text" name="number" id="number" onkeydown="return limitDigitsCard(event)"
           placeholder="e.g. 1234 5678 9123 0000" oninput="showNumber()" required>
         <p id="mensagemErro" style="color: hsl(0, 100%, 66%); font-size:10px;"></p>
-        <!-- You had a typo in the input name attribute (name="name" instead of name="number") -->
       </div>
 
       <div class="date-picker">
@@ -75,19 +73,16 @@
           <label for="#day">Day</label>
           <input id="day" type="number" min="1" max="31" onkeypress="return limitDigitsDay(event)" placeholder="dd"
             maxlength="2" oninput="showDay()" required>
-          <!-- Corrected the typo in the ID attribute (for="#day" instead of for="#dia") -->
         </div>
         <div class="form-group" style="width: 20%;">
           <label for="#month">Month</label>
           <input id="month" type="number" min="1" max="12" onkeypress="return limitDigitsMonth(event)" placeholder="mm"
             maxlength="2" oninput="showMonth()" required>
-          <!-- Corrected the typo in the ID attribute (for="#month" instead of for="#mes") -->
         </div>
         <div class="form-group" style="width: 60%;">
           <label for="#cvc">Cvc</label>
           <input id="cvc" type="number" onkeypress="return limitDigitsCvc(event)" placeholder="e.g. 123" maxlength="4"
             oninput="showCvc()" required>
-          <!-- Corrected the typo in the ID attribute (for="#year" instead of for="#ano") -->
         </div>
       </div>
       <button class="enviar">Confirm</button>
