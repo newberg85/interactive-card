@@ -64,7 +64,7 @@
       </div>
       <div class="form-input">
         <label for="number">Card Number</label>
-        <input type="text" name="number" id="number" onkeypress="return limitDigitsCard(event)"
+        <input type="text" name="number" id="number" onkeydown="return limitDigitsCard(event)"
           placeholder="e.g. 1234 5678 9123 0000" oninput="showNumber()" required>
         <p id="mensagemErro" style="color: hsl(0, 100%, 66%); font-size:10px;"></p>
         <!-- You had a typo in the input name attribute (name="name" instead of name="number") -->
@@ -90,7 +90,7 @@
           <!-- Corrected the typo in the ID attribute (for="#year" instead of for="#ano") -->
         </div>
       </div>
-      <button class="enviar">Enviar</button>
+      <button class="enviar">Confirm</button>
     </form>
 
 
