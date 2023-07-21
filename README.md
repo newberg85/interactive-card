@@ -29,8 +29,11 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-<img src="images/desktop-version.png" width="150px">
-<img src="images/mobile-version.png" width="150px">
+<div style="display:flex; width:100%">
+<img src="images/desktop-version.png" width="60%">
+<img src="images/mobile-version.png" width="40%">
+</div>
+
 
 
 ### Links
